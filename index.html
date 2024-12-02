@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-Ice | Tour dan Travel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .section {
+            padding: 20px;
+        }
+        .destinations {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .destination {
+            margin: 10px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .destination img {
+            width: 100%;
+            height: auto;
+        }
+        .destination h3 {
+            margin: 10px;
+            font-size: 1.2em;
+        }
+        .destination p {
+            margin: 10px;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+        #university-visits {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.university-list {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+.university-list li {
+    font-size: 16px;
+    margin: 5px 0;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>All-Ice Tour dan Travel </h1>
+    <p>Spesialisasi untuk Anak Sekolah</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">Tentang Kami</a>
+    <a href="#destinations">Destinasi</a>
+    <a href="#contact">Kontak</a>
+</nav>
+
+<section class="hero">
+    <img src="https://via.placeholder.com/1920x500" alt="Hero Image">
+    <div class="hero-text">
+        <h1>Jelajahi Indonesia Bersama Kami</h1>
+        <p>Pengalaman terbaik untuk anak-anak!</p>
+    </div>
+</section>
+
+<section class="section" id="about">
+    <h2>Tentang Kami</h2>
+    <p>Kami adalah agen perjalanan khusus untuk field trip anak sekolah, memberikan pengalaman edukatif dan menyenangkan di berbagai destinasi wisata di Indonesia.</p>
+</section>
+
+<section class="section" id="destinations">
+    <h2>Destinasi Populer</h2>
+    <div class="destinations">
+        <!-- Bali -->
+        <div class="destination">
+            <img src="https://plus.unsplash.com/premium_photo-1661878915254-f3163e91d870?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Garuda Wisnu Kencana Bali">
+            <h3>Bali</h3>
+            <p>Jelajahi budaya Bali dengan mengunjungi Patung Garuda Wisnu Kencana, salah satu landmark ikonik yang mempesona.</p>
+        </div>
+
+        <!-- Yogyakarta -->
+        <div class="destination">
+            <img src="https://plus.unsplash.com/premium_photo-1700955004555-900a9733ee14?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Candi Borobudur Yogyakarta">
+            <h3>Yogyakarta</h3>
+            <p>Kunjungi Candi Borobudur, candi Buddha terbesar di dunia yang menjadi Situs Warisan Dunia UNESCO.</p>
+        </div>
+
+        <!-- Malang -->
+        <div class="destination">
+            <img src="https://images.unsplash.com/photo-1565619109666-b8bfe0e95ceb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Alun-Alun Tugu Malang">
+            <h3>Malang</h3>
+            <p>Rasakan suasana tenang di Alun-Alun Tugu Malang, tempat yang dikelilingi bunga teratai indah.</p>
+        </div>
+
+        <!-- Bandung -->
+        <div class="destination">
+            <img src="https://media.istockphoto.com/id/1863357929/id/foto/gedung-sate-sebuah-bangunan-bersejarah-di-pusat-kota-bandung-indonesia.jpg?s=1024x1024&w=is&k=20&c=u-xLlzFBQKUtCO70LAhphGzTkW_qvDw7pSy9_fbePzc=" alt="Gedung Sate Bandung">
+            <h3>Bandung</h3>
+            <p>Nikmati keindahan Gedung Sate, bangunan bersejarah dengan gaya kolonial Belanda yang ikonik.</p>
+        </div>
+
+        <!-- Semarang -->
+        <div class="destination">
+            <img src="https://images.unsplash.com/photo-1651890053473-b25f7e1672dd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lawang Sewu Semarang">
+            <h3>Semarang</h3>
+            <p>Jelajahi Lawang Sewu, gedung bersejarah dengan desain arsitektur khas Belanda yang menawan.</p>
+        </div>
+    </div>
+</section>
+<section class="section" id="university-visits">
+    <h2>Kunjungan Universitas</h2>
+    <p>Kami menyediakan program kunjungan edukasi ke universitas terkemuka di Indonesia. Jelajahi peluang belajar sambil mengenal lingkungan kampus yang menginspirasi.</p>
+    <div class="universities">
+        <!-- Universitas Udayana -->
+        <div class="university">
+            <img src="https://example.com/udayana.jpg" alt="Universitas Udayana">
+            <h3>Universitas Udayana</h3>
+            <p>Kampus utama di Bukit Jimbaran dengan arsitektur khas Bali yang menawan.</p>
+        </div>
+
+        <!-- Universitas Gadjah Mada -->
+        <div class="university">
+            <img src="https://example.com/ugm.jpg" alt="Universitas Gadjah Mada">
+            <h3>Universitas Gadjah Mada</h3>
+            <p>Balairung UGM, simbol pendidikan tinggi dengan sejarah panjang di Indonesia.</p>
+        </div>
+
+        <!-- Universitas Negeri Semarang -->
+        <div class="university">
+            <img src="https://example.com/unnes.jpg" alt="Universitas Negeri Semarang">
+            <h3>Universitas Negeri Semarang</h3>
+            <p>Gedung Rektorat yang modern dan ramah lingkungan, menjadi daya tarik utama.</p>
+        </div>
+
+        <!-- Universitas Negeri Malang -->
+        <div class="university">
+            <img src="https://example.com/um.jpg" alt="Universitas Negeri Malang">
+            <h3>Universitas Negeri Malang</h3>
+            <p>Gedung Graha Cakrawala, pusat kegiatan akademik dan budaya di Malang.</p>
+        </div>
+
+        <!-- Institut Pertanian Bogor -->
+        <div class="university">
+            <img src="https://example.com/ipb.jpg" alt="Institut Pertanian Bogor">
+            <h3>Institut Pertanian Bogor</h3>
+            <p>Kampus Darmaga dengan taman koleksi botani yang terkenal di dunia.</p>
+        </div>
+
+        <!-- Institut Teknologi Bandung -->
+        <div class="university">
+            <img src="https://example.com/itb.jpg" alt="Institut Teknologi Bandung">
+            <h3>Institut Teknologi Bandung</h3>
+            <p>Gedung Aula Barat, saksi perjalanan panjang teknologi dan seni di Indonesia.</p>
+        </div>
+
+        <!-- UIN Diponegoro -->
+        <div class="university">
+            <img src="https://example.com/uin.jpg" alt="UIN Diponegoro">
+            <h3>UIN Diponegoro</h3>
+            <p>Patung Diponegoro menjadi simbol integrasi budaya dan pendidikan modern.</p>
+        </div>
+
+        <!-- Universitas Negeri Yogyakarta -->
+        <div class="university">
+            <img src="https://example.com/uny.jpg" alt="Universitas Negeri Yogyakarta">
+            <h3>Universitas Negeri Yogyakarta</h3>
+            <p>Gedung Rektorat yang futuristik dan menjadi ikon pendidikan di Jogja.</p>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2024 Tour dan Travel Field Trip. Semua hak dilindungi.</p>
+</footer>
+
+</body>
+</html>
