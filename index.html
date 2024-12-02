@@ -33,20 +33,143 @@
             color: black;
         }
         .hero {
-            position: relative;
-            text-align: center;
-            color: white;
-        }
-        .hero img {
-            width: 100%;
-            height: auto;
-        }
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Awalnya kolom untuk mobile */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Styling Section */
+.contact-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f7f8fa;
+    color: #333;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Grid Layout */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Item */
+.contact-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.contact-item i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #4caf50;
+}
+
+.contact-item p {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact-item a {
+    font-size: 0.9rem;
+    color: #4caf50;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.hero img {
+    width: 100%;
+    height: auto; /* Membuat gambar tetap proporsional */
+    object-fit: cover; /* Mengisi area dengan tetap mempertahankan aspek rasio */
+    max-height: 500px; /* Membatasi tinggi maksimum gambar untuk tata letak rapi */
+}
+
+.hero-text {
+    position: absolute;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan untuk kontras teks */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%; /* Batas lebar untuk teks */
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1rem;
+}
+
+/* Media Queries untuk Layar Lebar */
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row; /* Gambar di sebelah kiri, teks di sebelah kanan */
+    }
+
+    .hero img {
+        width: 50%; /* Gambar hanya mengambil setengah layar */
+        max-height: none; /* Tidak membatasi tinggi pada layar besar */
+    }
+
+    .hero-text {
+        position: relative;
+        max-width: 40%; /* Batasi lebar teks pada layar besar */
+        text-align: left; /* Teks rata kiri */
+    }
+
+    .hero-text h1 {
+        font-size: 3rem; /* Ukuran teks lebih besar */
+    }
+
+    .hero-text p {
+        font-size: 1.25rem; /* Ukuran teks deskripsi lebih besar */
+    }
+}
         .section {
             padding: 20px;
         }
@@ -80,21 +203,50 @@
             padding: 10px 20px;
             margin-top: 20px;
         }
-        #university-visits {
-    background-color: #f9f9f9;
-    padding: 20px;
+        .universities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+    gap: 20px; /* Jarak antar item */
+    padding: 20px 0;
+}
+
+.university {
+    border: 1px solid #ddd;
     border-radius: 10px;
-    margin-top: 20px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
 }
 
-.university-list {
-    list-style-type: circle;
-    padding-left: 20px;
+.university img {
+    width: 100%; /* Gambar menyesuaikan lebar kontainer */
+    height: 400px; /* Menjaga proporsi gambar */
+    border-bottom: 1px solid #ddd;
 }
 
-.university-list li {
-    font-size: 16px;
-    margin: 5px 0;
+.university h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.university p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Responsif untuk layar lebih kecil */
+@media (max-width: 768px) {
+    .universities {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar sedang */
+    }
+}
+
+/* Responsif untuk layar sangat kecil */
+@media (max-width: 480px) {
+    .universities {
+        grid-template-columns: 1fr; /* 1 kolom pada layar kecil */
+    }
 }
 #vision-mission {
     background-color: #f4f4f4;
@@ -136,6 +288,8 @@
     margin-bottom: 8px;
 }
     </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -148,14 +302,14 @@
     <a href="#home">Home</a>
     <a href="#about">Tentang Kami</a>
     <a href="#destinations">Destinasi</a>
-    <a href="#contact">Kontak</a>
+    <a href="#contacts">Kontak</a>
 </nav>
 
 <section class="hero">
-    <img src="https://via.placeholder.com/1920x500" alt="Hero Image">
+    <img src="all-ice.jpg" alt="Hero Image">
     <div class="hero-text">
         <h1>Jelajahi Indonesia Bersama Kami</h1>
-        <p>Pengalaman terbaik untuk anak-anak!</p>
+        <p>Pengalaman terbaik untuk perjalanan anda!</p>
     </div>
 </section>
 
@@ -236,58 +390,94 @@
     <div class="universities">
         <!-- Universitas Udayana -->
         <div class="university">
-            <img src="https://via.placeholder.com/300x300" alt="Universitas Udayana">
+            <img src="https://biologi.unud.ac.id/protected/storage/file_summernote/76dc611d6ebaafc66cc0879c71b5db5c.png" alt="Universitas Udayana">
             <h3>Universitas Udayana</h3>
             <p>Kampus utama di Bukit Jimbaran dengan arsitektur khas Bali yang menawan.</p>
         </div>
 
         <!-- Universitas Gadjah Mada -->
         <div class="university">
-            <img src="https://via.placeholder.com/300x300" alt="Universitas Gadjah Mada">
+            <img src="https://th.bing.com/th/id/OIP.wQk4zml202ZFvPxiPe8wQQHaHa?rs=1&pid=ImgDetMain" alt="Universitas Gadjah Mada">
             <h3>Universitas Gadjah Mada</h3>
             <p>Balairung UGM, simbol pendidikan tinggi dengan sejarah panjang di Indonesia.</p>
         </div>
 
         <!-- Universitas Negeri Semarang -->
         <div class="university">
-            <img src="https://via.placeholder.com/300x300" alt="Universitas Negeri Semarang">
+            <img src="https://logosrated.net/wp-content/uploads/parser/Universitas-Negeri-Semarang-Logo-1.jpg" alt="Universitas Negeri Semarang">
             <h3>Universitas Negeri Semarang</h3>
             <p>Gedung Rektorat yang modern dan ramah lingkungan, menjadi daya tarik utama.</p>
         </div>
 
         <!-- Universitas Negeri Malang -->
         <div class="university">
-            <img src="https://via.placeholder.com/300x300" alt="Universitas Negeri Malang">
+            <img src="https://4.bp.blogspot.com/-4DCM96R6RZM/U7pSwfTOKAI/AAAAAAAAACc/AgSgd5CeZMg/s1600/logo-Universitas-Negeri-Malang-709595.jpg" alt="Universitas Negeri Malang">
             <h3>Universitas Negeri Malang</h3>
             <p>Gedung Graha Cakrawala, pusat kegiatan akademik dan budaya di Malang.</p>
         </div>
 
         <!-- Institut Pertanian Bogor -->
         <div class="university">
-            <img src="https://via.placeholder.com/300x300" alt="Institut Pertanian Bogor">
+            <img src="https://via.placeholder.com/200x200" alt="Institut Pertanian Bogor">
             <h3>Institut Pertanian Bogor</h3>
             <p>Kampus Darmaga dengan taman koleksi botani yang terkenal di dunia.</p>
         </div>
 
         <!-- Institut Teknologi Bandung -->
         <div class="university">
-            <img src="https://via.placeholder.com/300x300" alt="Institut Teknologi Bandung">
+            <img src="https://via.placeholder.com/200x200" alt="Institut Teknologi Bandung">
             <h3>Institut Teknologi Bandung</h3>
             <p>Gedung Aula Barat, saksi perjalanan panjang teknologi dan seni di Indonesia.</p>
         </div>
 
         <!-- UIN Diponegoro -->
         <div class="university">
-            <img src="https://via.placeholder.com/300x300" alt="UIN Diponegoro">
+            <img src="https://via.placeholder.com/200x200" alt="UIN Diponegoro">
             <h3>UIN Diponegoro</h3>
             <p>Patung Diponegoro menjadi simbol integrasi budaya dan pendidikan modern.</p>
         </div>
 
         <!-- Universitas Negeri Yogyakarta -->
         <div class="university">
-            <img src="https://via.placeholder.com/300x300" alt="Universitas Negeri Yogyakarta">
+            <img src="https://via.placeholder.com/200x200" alt="Universitas Negeri Yogyakarta">
             <h3>Universitas Negeri Yogyakarta</h3>
             <p>Gedung Rektorat yang futuristik dan menjadi ikon pendidikan di Jogja.</p>
+        </div>
+    </div>
+</section>
+<section class="contact-section" id="contacts">
+    <h2>Hubungi Kami</h2>
+    <p>Jangan ragu untuk menghubungi kami melalui informasi berikut:</p>
+    <div class="contact-info">
+        <!-- Uncle Doel -->
+        <div class="contact-item">
+            <i class="fas fa-user-circle"></i>
+            <p>Uncle Doel</p>
+            <a href="tel:081292914100"><i style="font-size:0.9rem;padding-top: 10px;" class="fas fa-phone-alt"></i> 0812-9291-4100</a>
+        </div>
+        <!-- Yani -->
+        <div class="contact-item">
+            <i class="fas fa-user-circle"></i>
+            <p>Yani</p>
+            <a href="tel:083874982380"><i style="font-size:0.9rem;padding-top: 10px;" class="fas fa-phone-alt"></i> 0838-7498-2380</a>
+        </div>
+        <!-- Batman Loy -->
+        <div class="contact-item">
+            <i class="fas fa-user-circle"></i>
+            <p>Batman Loy</p>
+            <a href="tel:081295525063"><i style="font-size:0.9rem;padding-top: 10px;"  class="fas fa-phone-alt"></i> 0812-9552-5063</a>
+        </div>
+        <!-- Email -->
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <p>Email</p>
+            <a href="mailto:allicetourandtravelnew@gmail.com">allicetourandtravelnew@gmail.com</a>
+        </div>
+        <!-- Instagram -->
+        <div class="contact-item">
+            <i class="fab fa-instagram"></i>
+            <p>Instagram</p>
+            <a href="https://instagram.com/allice.tourandtravel" target="_blank">@allice.tourandtravel</a>
         </div>
     </div>
 </section>
